@@ -1,0 +1,43 @@
+@value brand, gray-700, white from '../../style/theme.css';
+@value space-2, space-3, space-4, size-20, font-mono from '../../style/theme.css';
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 20px;
+  height: 100%;
+}
+
+.teamHeader {
+  position: absolute;
+  top: -20px;
+  left: 40px;
+  opacity: 0;
+
+  p {
+    margin-top: space-2;
+    padding: space-3 space-4;
+    background-color: var(--color);
+    font-size: size-20;
+    overflow: hidden;
+    text-overflow: hidden;
+    white-space: nowrap;
+    color: white;
+  }
+}
+
+
+.runs {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 70px 70px;
+  grid-auto-flow: column;
+  position: relative;
+  width: 100%;
+}
+
+.run {
+  padding: 6px space-4;
+}

@@ -1,0 +1,25 @@
+@value brand, gray-200, gray-600, white from '../../style/theme.css';
+@value space-1, space-2, space-3, space-4, size-10, size-20, font-mono, font-brand from '../../style/theme.css';
+
+.container {
+  --color: gray-600;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: space-3;
+  background-color: var(--color);
+}
+
+.text {
+  width: 100%;
+  text-align: center;
+  font-size: size-20;
+  color: gray-200;
+
+  strong {
+    color: white;
+    font-weight: 700;
+  }
+}

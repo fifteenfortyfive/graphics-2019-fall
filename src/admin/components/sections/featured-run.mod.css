@@ -1,0 +1,40 @@
+@value brand, green, black, gray-200, gray-300, gray-600, gray-800, space-2, space-3, space-4, size-12, size-14, size-20 from '../../../style/theme.css';
+@value radius-1 from '../../../style/theme.css';
+
+.actions {
+  margin: space-4 0;
+}
+
+.subHeader {
+  padding-top: space-4;
+  margin-bottom: space-3;
+  font-size: size-12;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.success {
+  color: green;
+}
+
+.failure {
+  color: brand;
+}
+
+.intervalInput {
+  --background: gray-300;
+  --color: black;
+  --border: var(--color);
+  display: block;
+  box-sizing: border-box;
+  padding: space-3 space-4;
+  margin: space-3 0;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  outline: none;
+  background: var(--background);
+  color: var(--color);
+  font-size: size-14;
+  width: 100%;
+}

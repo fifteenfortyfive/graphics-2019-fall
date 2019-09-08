@@ -1,0 +1,18 @@
+@value gray-200, space-2, space-3, space-4, size-14, size-16 from '../../style/theme.css';
+@value radius-1 from '../../style/theme.css';
+
+.section {
+  padding: space-4;
+  border: 1px solid gray-200;
+  border-radius: radius-1;
+  font-size: size-14;
+  line-height: 1.4;
+}
+
+.sectionTitle {
+  font-size: size-16;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: space-4;
+}

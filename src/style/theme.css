@@ -1,0 +1,46 @@
+@value font-text 'Encode Sans';
+@value font-mono 'proxima-nova';
+@value font-brand 'cortado';
+
+@value white #fff;
+@value gray-100 #f7f7f7;
+@value gray-200 #e7e7e7;
+@value gray-300 #ddd;
+@value gray-400 #aaa;
+@value gray-500 #777;
+@value gray-560 #666;
+@value gray-600 #444;
+@value gray-660 #3a3a3a;
+@value gray-700 #333;
+@value gray-760 #2a2a2a;
+@value gray-800 #222;
+@value black #111;
+
+@value brand #eb3d4c;
+@value green #39f139;
+
+
+@value size-42 42px;
+@value size-40 40px;
+@value size-32 32px;
+@value size-24 24px;
+@value size-20 20px;
+@value size-16 16px;
+@value size-14 14px;
+@value size-12 12px;
+@value size-10 10px;
+
+
+@value space-1 2px;
+@value space-2 4px;
+@value space-3 8px;
+@value space-4 16px;
+@value space-5 32px;
+@value space-6 64px;
+
+
+@value radius-0 2px;
+@value radius-1 4px;
+@value radius-2 8px;
+@value radius-3 16px;
+@value radius-4 50%;

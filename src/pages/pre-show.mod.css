@@ -1,0 +1,31 @@
+@value brand, black, green, gray-500, gray-700, gray-800 from '../style/theme.css';
+@value space-1, space-2, space-3, space-4 from '../style/theme.css';
+@value font-text from '../style/theme.css';
+
+.layoutContainer {
+  display: grid;
+  grid-template:
+      "greenscreen greenscreen" 639px
+      "overlay overlay" 200px
+      "omnibar omnibar" 61px
+    / 335px 1265px;
+  font-family: font-text;
+  background-color: green;
+}
+
+.mainVideo {
+  grid-area: mainvideo;
+  overflow: hidden;
+  background-color: gray-800;
+}
+
+.overlay {
+  grid-area: overlay;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top: 1px solid brand;
+}
+
+.omnibar {
+  grid-area: omnibar;
+  border-top: 1px solid brand;
+}

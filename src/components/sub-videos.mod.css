@@ -1,0 +1,15 @@
+@value black from '../style/theme.css';
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 1px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.element {
+  background-color: black;
+  overflow: hidden;
+}

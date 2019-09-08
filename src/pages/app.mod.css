@@ -1,0 +1,33 @@
+@value black, gray-500, gray-700, gray-800 from '../style/theme.css';
+@value space-1, space-2, space-3, space-4 from '../style/theme.css';
+@value font-text from '../style/theme.css';
+
+.layoutContainer {
+  display: grid;
+  grid-template:
+      "sidebar mainvideo" 711px
+      "subvideos subvideos" 128px
+      "omnibar omnibar" 61px
+    / 335px 1264px;
+  grid-gap: 1px;
+  font-family: font-text;
+}
+
+.mainVideo {
+  grid-area: mainvideo;
+  overflow: hidden;
+  background-color: gray-800;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: gray-800;
+}
+
+.subVideos {
+  grid-area: subvideos;
+}
+
+.omnibar {
+  grid-area: omnibar;
+}

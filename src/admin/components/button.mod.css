@@ -1,0 +1,61 @@
+@value brand, green, black, gray-800, gray-700, gray-200, gray-100, white from '../../style/theme.css';
+@value space-2, space-3, space-4, size-16 from '../../style/theme.css';
+@value radius-1 from '../../style/theme.css';
+
+.button {
+  --background: gray-700;
+  --color: white;
+  --border: var(--color);
+  display: block;
+  box-sizing: border-box;
+  padding: space-3 space-4;
+  margin: space-3 0;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  outline: none;
+  background: var(--background);
+  color: var(--color);
+  font-size: size-16;
+
+  &:hover {
+    --background: gray-800;
+    --color: gray-200;
+    cursor: pointer;
+  }
+
+  &:active {
+    --background: gray-800;
+    --color: white;
+  }
+
+  &:focus {
+    outline: 2px solid brand;
+  }
+
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: normal;
+    pointer-events: none;
+  }
+}
+
+.inverted {
+  --background: white;
+  --color: gray-700;
+
+  &:hover {
+    --background: gray-200;
+    --color: gray-700;
+  }
+
+  &:active {
+    --background: gray-200;
+    --color: black;
+    --border: white;
+  }
+}
+
+.fullwidth {
+  width: 100%;
+}

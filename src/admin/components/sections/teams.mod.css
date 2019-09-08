@@ -1,0 +1,25 @@
+@value gray-200 from '../../../style/theme.css';
+@value space-2, space-3, space-4, size-12, size-16 from '../../../style/theme.css';
+@value font-mono from '../../../style/theme.css';
+
+.teams {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: space-4;
+}
+
+.team {
+  --color: white;
+  color: var(--color);
+}
+
+
+.time {
+  font-family: font-mono;
+  font-size: size-16;
+  font-weight: 700;
+}
+
+.state {
+  font-size: size-12;
+}

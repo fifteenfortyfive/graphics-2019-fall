@@ -1,0 +1,25 @@
+@value brand, gray-200, white from '../../style/theme.css';
+
+.input {
+  display: block;
+  padding: 4px 8px;
+  margin: 8px 0;
+  border-radius: 3px;
+  border: 1px solid gray-200;
+  font-size: 16px;
+
+  &:focus,
+  &:active,
+  &:hover {
+    outline: none;
+    border: 1px solid brand;
+  }
+}
+
+.button {
+  padding: 4px 8px;
+  border: 1px solid gray-200;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+}

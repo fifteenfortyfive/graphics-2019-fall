@@ -1,0 +1,25 @@
+@value brand, gray-700, black from '../style/theme.css';
+@value size-10, size-12, space-2, space-3 from '../style/theme.css';
+
+.container {
+  background-color: gray-700;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.featuredIndicator {
+  position: absolute;
+  padding: 0 space-3;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.streamHolder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}

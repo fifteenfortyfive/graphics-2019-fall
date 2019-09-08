@@ -1,0 +1,19 @@
+@value gray-200 from '../../../style/theme.css';
+@value space-2, space-3, space-4, size-24 from '../../../style/theme.css';
+@value font-mono from '../../../style/theme.css';
+
+.time {
+  font-size: size-24;
+  font-family: font-mono;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.subHeader {
+  padding-top: space-4;
+  margin-bottom: space-3;
+  font-size: size-12;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}

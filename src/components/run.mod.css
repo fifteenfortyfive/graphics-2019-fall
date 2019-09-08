@@ -1,0 +1,85 @@
+@value white, gray-400, gray-600 from '../style/theme.css';
+@value size-10, size-12, size-14, size-16, size-20, space-1, space-2, space-3, space-6, radius-1 from '../style/theme.css';
+@value font-mono from '../style/theme.css';
+
+.run {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: size-12;
+  color: white;
+}
+
+.runnerAvatar {
+  flex: 0 0 48px;
+  margin-right: space-3;
+}
+
+.runInfo {
+  flex: 1 1 auto;
+}
+
+.gameName {
+  margin-bottom: space-1;
+  color: gray-400;
+  color: var(--color);
+  font-family: font-mono;
+  font-size: size-12;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+}
+
+.teamName {
+  margin-bottom: space-1;
+  color: gray-400;
+  color: var(--color);
+  font-family: font-mono;
+  font-size: size-12;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+}
+
+.runnerName {
+  margin-bottom: space-1;
+  font-size: size-14;
+}
+
+
+.detail {
+  font-size: size-12;
+  font-family: font-mono;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.estimate {
+  display: inline-block;
+  margin-right: space-2;
+}
+
+.pb {
+  color: var(--color);
+}
+
+.muted {
+  color: gray-400;
+}
+
+.progress {
+  margin-top: space-2;
+}
+
+
+.noWrap {
+  .gameName,
+  .teamName,
+  .runnerName,
+  .detail {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 1em;
+  }
+}

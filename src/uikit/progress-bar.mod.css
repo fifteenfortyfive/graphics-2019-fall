@@ -1,0 +1,21 @@
+@value gray-600 from '../style/theme.css';
+@value space-1, radius-1 from '../style/theme.css';
+@value font-mono from '../style/theme.css';
+
+.progressBarContainer {
+  --progress: 0%;
+  width: 100%;
+  height: 4px;
+  background-color: gray-600;
+  border-radius: radius-1;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  width: var(--progress);
+  background-color: var(--color);
+  border-radius: radius-1;
+
+  transition: width 0.5s ease-in-out;
+}

@@ -1,0 +1,62 @@
+@value white, gray-100, gray-400, gray-700, gray-760, black from '../../style/theme.css';
+@value size-10, size-12, size-14, size-32, space-2, space-3, space-4 from '../../style/theme.css';
+@value font-mono, radius-1 from '../../style/theme.css';
+
+.teamCard {
+  --color: white;
+  overflow: hidden;
+  border-radius: radius-1;
+  box-shadow: 0 0 12px black;
+  background-color: gray-700;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color);
+  color: white;
+  padding: space-2 space-3;
+}
+
+.teamName {
+  font-size: size-12;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.gameCount {
+  text-align: right;
+  font-size: size-12;
+  font-family: font-mono;
+  text-transform: uppercase;
+}
+
+.details {
+  padding: space-3 space-3 space-2 space-3;
+}
+
+
+.section {
+  margin-bottom: space-3;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.teamProgress {
+  margin-top: space-2;
+  height: 6px;
+}
+
+
+.finalRealTime {
+  font-size: size-32;
+  padding: space-3;
+}
+
+
+.muted {
+  color: gray-400;
+}

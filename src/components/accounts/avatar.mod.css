@@ -1,0 +1,7 @@
+@value radius-2 from '../../style/theme.css';
+
+.avatar {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15%;
+}

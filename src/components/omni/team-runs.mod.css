@@ -1,0 +1,30 @@
+@value brand, gray-700, white from '../../style/theme.css';
+@value space-2, space-3, space-4, size-16, size-32, font-mono from '../../style/theme.css';
+
+.content {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.teamHeader {
+  flex: 1 0 auto;
+  height: 100%;
+  opacity: 0;
+
+  p {
+    margin-top: space-4;
+    padding: 6px space-4;
+    background-color: var(--color);
+    font-size: size-16;
+    overflow: hidden;
+    text-overflow: hidden;
+    white-space: nowrap;
+    color: white;
+  }
+}
+
+
+.run {
+  padding: 6px space-4;
+}
