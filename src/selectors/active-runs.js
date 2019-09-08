@@ -12,10 +12,10 @@ const getRuns = (state) => state.runs;
 
 export const getSortedRunsByTeam = createSelector(
   [getRuns],
-  (runs) => _.chain(Object.values(runs))
-      .sortBy('index')
-      .groupBy('team_id')
-      .value()
+  (runs) => {
+    const sorted = _.sortBy(Object.values(runs), 'index');
+    return _.groupBy(sorted, 'team_id');
+  }
 );
 
 export const getSortedRunsForTeam = createCachedSelector(
@@ -34,12 +34,9 @@ export function getActiveRun(runs) {
 export const getActiveRunIds = createSelector(
   [getSortedRunsByTeam, getSortedTeams],
   (sortedRunsByTeam, teams) => {
-    return _.chain(teams)
-      .map((team) => {
+    return _.map(teams, (team) => {
         const runs = sortedRunsByTeam[team.id];
-        return getActiveRun(runs);
-      })
-      .map('id')
-      .value();
+        return getActiveRun(runs).id;
+      });
   }
 );

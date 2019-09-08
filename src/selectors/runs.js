@@ -13,10 +13,7 @@ export const getRun = (state, props) => state.runs[props.runId];
 
 export const getRunsByTeam = createSelector(
   [getRuns],
-  (runs) => _.chain(runs)
-    .sortBy('index')
-    .groupBy('team_id')
-    .value()
+  (runs) => _.groupBy(_.sortBy(runs, 'index'), 'team_id')
 );
 
 

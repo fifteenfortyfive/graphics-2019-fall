@@ -47,11 +47,9 @@ const getRequestedCount = (_, props) => props.count;
 export const getUpcomingRuns = createSelector(
   [getEstimatedRunSchedulesByTeam, getRequestedCount],
   (runsByTeam, count) => {
-    const sortedNextRuns = _.chain(runsByTeam)
-        .flatMap()
-        .reject('isStarted')
-        .sortBy((r) => r.estimatedStartTime.toMillis())
-        .value();
+    const runs = _.flatMap(runsByTeam);
+    const upcoming = _.reject(runs, 'isStarted');
+    const sortedNextRuns = _.sortBy((r) => r.estimatedStartTime.toMillis());
 
     if(count) {
       return sortedNextRuns.slice(0, count);

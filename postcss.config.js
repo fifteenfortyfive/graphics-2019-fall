@@ -1,6 +1,8 @@
 module.exports = {
-  modules: true,
-  plugins: [
-    require('postcss-nested')(),
-  ]
+  plugins: {
+    'postcss-import': {},
+    'postcss-preset-env': {},
+    'postcss-nesting': {},
+    'cssnano': {}
+  }
 }

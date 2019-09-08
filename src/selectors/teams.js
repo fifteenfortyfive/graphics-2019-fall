@@ -19,10 +19,8 @@ export const getSortedTeams = createSelector(
 export const getTeamRuns = createCachedSelector(
   [getRuns, getTeamId],
   (runs, teamId) => {
-    return _.chain(runs)
-        .filter((run) => run.team_id == teamId)
-        .sortBy('index')
-        .value();
+    const teamRuns = _.filter(runs, (run) => run.team_id == teamId);
+    return _.sortBy(teamRuns, 'index');
   }
 )(getTeamId);
 
@@ -34,10 +32,10 @@ export const getTeamRunIds = createCachedSelector(
 
 export const getTeamRunIdsGameOrdered = createCachedSelector(
   [getTeamRuns],
-  (runs) => _.chain(runs)
-      .sortBy('game_id')
-      .map('id')
-      .value()
+  (runs) => {
+    const sorted = _.sortBy(runs, 'game_id');
+    return sorted.map('id');
+  }
 )(getTeamId);
 
 
