@@ -2,7 +2,8 @@ import './style/reset.css';
 import './style/theme.css';
 
 import { h, render } from 'preact';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
+import {useRoutes} from 'hookrouter';
 
 import App from './pages/app';
 import PreShow from './pages/pre-show';
@@ -14,27 +15,30 @@ import Admin from './admin/admin';
 import {adminStore} from './admin/reducer';
 
 
-
-if(window.location.pathname === '/admin') {
-  render(
-    <Provider store={adminStore}>
-      <Admin />
-    </Provider>
-  , document.querySelector('#app-container'));
-  // import 'preact/debug';
-} else if(window.location.pathname === '/preshow') {
-  render(
-    <Provider store={store}>
-      <PreShow />
-    </Provider>
-  , document.querySelector('#app-container'));
-  // import 'preact/debug';
-} else {
-  render(
+const APP_ROUTES = {
+  '/': () => (
     <Provider store={store}>
       <App />
       <StateSync />
     </Provider>
-  , document.querySelector('#app-container'));
+  ),
+  '/preshow': () => (
+    <Provider store={store}>
+      <PreShow />
+    </Provider>
+  ),
+  '/admin': () => (
+    <Provider store={adminStore}>
+      <Admin />
+    </Provider>
+  )
 }
 
+function Router(props) {
+  const routeApp = useRoutes(APP_ROUTES);
+
+  return routeApp;
+};
+
+
+render(<Router />, document.querySelector('#app-container'));
