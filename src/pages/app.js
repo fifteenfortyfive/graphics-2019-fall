@@ -64,6 +64,9 @@ class App extends Component {
                   className={style.main1}
                 />
                 <div class={style.centerLine}>
+                  <div class={style.brand}>
+                    <div class={style.logoText}>The 1545</div>
+                  </div>
                   <div class={style.timerContainer}>
                     <EventTimer className={style.timer} eventId={EVENT_ID} />
                   </div>
