@@ -7,7 +7,7 @@ import style from './avatar.mod.css';
 const Avatar = (props) => {
   const {
     url=ASSETS_URL,
-    src,
+    src="default-avatar",
     size=128, // should be one of 16, 24, 32, 48, 64, 96, 128
     className,
   } = props;

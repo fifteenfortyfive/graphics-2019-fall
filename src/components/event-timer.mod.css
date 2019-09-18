@@ -1,5 +1,5 @@
 @value brand, black, gray-700, white from '../style/theme.css';
-@value space-1, space-2, space-3, space-4, size-10, size-40, font-mono, font-brand from '../style/theme.css';
+@value space-1, space-2, space-3, space-4, size-10, size-32, font-mono, font-brand from '../style/theme.css';
 
 .currentTime {
   text-align: right;
@@ -14,7 +14,7 @@
   padding: space-2 space-4 space-2 space-4;
   margin: 0;
   font-family: font-mono;
-  font-size: size-40;
+  font-size: size-32;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   line-height: 0.7;

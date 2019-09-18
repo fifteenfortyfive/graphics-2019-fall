@@ -4,9 +4,10 @@ import { EVENT_ID } from '../constants';
 export function fetchRuns(eventId = EVENT_ID, {teamId, runIds} = {}) {
   return commonThunk({
     method: 'get',
-    path: `/api/v1/events/${eventId}/runs`,
+    path: `/api/v1/runs`,
     name: 'runs',
     query: denulled({
+      event_id: eventId,
       team_id: teamId,
       run_ids: runIds
     })

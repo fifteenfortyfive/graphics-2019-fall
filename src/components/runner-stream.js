@@ -1,4 +1,5 @@
 import {h, Component, createRef} from 'preact';
+import classNames from 'classnames';
 import {connect} from 'react-redux';
 import TimelineMax from 'gsap/TimelineMax';
 
@@ -101,9 +102,9 @@ class RunnerStream extends Component {
   }
 
   render() {
-    const {runId, isFeatured, includeFeaturedIndicator} = this.props;
+    const {runId, isFeatured, includeFeaturedIndicator, className} = this.props;
     return (
-      <div class={style.container}>
+      <div class={classNames(style.container, className)}>
         { includeFeaturedIndicator &&
           <FeaturedIndicator
             className={style.featuredIndicator}

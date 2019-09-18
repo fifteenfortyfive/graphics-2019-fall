@@ -1,33 +1,100 @@
-@value black, gray-500, gray-700, gray-800 from '../style/theme.css';
+@value black, brand, gray-500, gray-700, gray-800 from '../style/theme.css';
 @value space-1, space-2, space-3, space-4 from '../style/theme.css';
 @value font-text from '../style/theme.css';
 
 .layoutContainer {
-  display: grid;
-  grid-template:
-      "sidebar mainvideo" 711px
-      "subvideos subvideos" 128px
-      "omnibar omnibar" 61px
-    / 335px 1264px;
-  grid-gap: 1px;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
   font-family: font-text;
 }
 
-.mainVideo {
-  grid-area: mainvideo;
+.videos {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+}
+
+.main1 {
+  flex: 0 0 449px;
+  overflow: hidden;
+  background-color: gray-700;
+}
+
+.main2 {
+  flex: 0 0 449px;
   overflow: hidden;
   background-color: gray-800;
 }
 
-.sidebar {
-  grid-area: sidebar;
+.centerLine {
+  flex: 0 0 2px;
+  z-index: 10;
+  /* It'd be nice if this were inherited, but that's way more difficult
+  than is worth handling. */
+  background: linear-gradient(70deg, #d46060, #56a3d8);
+}
+
+.timerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  width: 180px;
+  height: 52px;
+}
+
+.timer {
+  position: absolute;
+  top: -26px;
+  left: -92px;
+  width: 180px;
+  height: 52px;
+  padding-top: 7px;
+  border: 2px solid brand;
+  background-color: gray-800;
+  line-height: 1;
+  text-align: center;
+}
+
+.redTeamIndicator {
+  position: absolute;
+  left: 0;
+  top: 200px;
+  height: 128px;
+  width: 16px;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 14px solid #d46060;
+}
+
+.blueTeamIndicator {
+  position: absolute;
+  right: 0;
+  bottom: 200px;
+  height: 128px;
+  width: 32px;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-right: 14px solid #56a3d8;
+}
+
+
+.redTeam {
+  flex: 0 0 322px;
+  width: 100%;
+  height: 100%;
   background-color: gray-800;
 }
 
-.subVideos {
-  grid-area: subvideos;
-}
-
-.omnibar {
-  grid-area: omnibar;
+.blueTeam {
+  flex: 0 0 322px;
+  width: 100%;
+  height: 100%;
+  background-color: gray-800;
 }

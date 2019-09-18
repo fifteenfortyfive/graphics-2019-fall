@@ -4,6 +4,8 @@
 .omnibar {
   display: flex;
   align-items: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
   background-color: gray-700;
 }
 
@@ -50,4 +52,8 @@
   justify-content: center;
   border-left: 1px solid brand;
   color: white;
+}
+
+.progress {
+  height: 6px;
 }

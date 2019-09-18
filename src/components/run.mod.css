@@ -1,5 +1,5 @@
 @value white, gray-400, gray-600 from '../style/theme.css';
-@value size-10, size-12, size-14, size-16, size-20, space-1, space-2, space-3, space-6, radius-1 from '../style/theme.css';
+@value size-10, size-12, size-14, size-16, size-20, space-1, space-2, space-3, space-4, space-6, radius-1 from '../style/theme.css';
 @value font-mono from '../style/theme.css';
 
 .run {
@@ -12,7 +12,7 @@
 
 .runnerAvatar {
   flex: 0 0 48px;
-  margin-right: space-3;
+  margin-right: space-4;
 }
 
 .runInfo {
@@ -42,7 +42,7 @@
 }
 
 .runnerName {
-  margin-bottom: space-1;
+  margin-bottom: space-2;
   font-size: size-14;
 }
 

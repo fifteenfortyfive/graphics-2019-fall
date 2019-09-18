@@ -6,12 +6,16 @@ import style from './progress-bar.mod.css';
 const ProgressBar = (props) => {
   const {
     progress,
+    color,
     className
   } = props;
 
   return (
     <div class={classNames(style.progressBarContainer, className)}>
-      <div class={style.progressBar} style={{'--progress': `${progress}%`}} />
+      <div class={style.progressBar} style={{
+          '--progress': `${progress}%`,
+          '--color': color
+        }} />
     </div>
   );
 };

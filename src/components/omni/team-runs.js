@@ -1,4 +1,5 @@
 import {h, Component, createRef} from 'preact';
+import classNames from 'classnames';
 import {connect} from 'react-redux';
 import {TimelineMax} from 'gsap/TimelineMax';
 import _ from 'lodash';
@@ -44,23 +45,15 @@ class TeamRuns extends Component {
 
     return (
       <div class={style.content} ref={this.container} style={{'--color': `#${team.color}`}}>
-        <div ref={this.header} class={style.teamHeader}>
-          <p>{team.name}</p>
-        </div>
-        <SlideCycle
-            class={style.content}
-            timeline={this.childTimeline}
-          >
-          { _.map(runIds, (runId) => (
-              <Run
-                className={style.run}
-                key={runId}
-                runId={runId}
-                midRow="game"
-              />
-            ))
-          }
-        </SlideCycle>
+        { _.map(runIds, (runId, i) => (
+            <Run
+              className={classNames(style.run, {[style.activeRun]: i == 3})}
+              key={runId}
+              runId={runId}
+              midRow="game"
+            />
+          ))
+        }
       </div>
     );
   }

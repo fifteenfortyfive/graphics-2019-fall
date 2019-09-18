@@ -28,7 +28,7 @@ export const getSortedRunsForTeam = createCachedSelector(
 
 export function getActiveRun(runs) {
   return _.find(runs, (run) => !run.finished)
-      || runs[runs.length-1];
+      || (runs ? runs[runs.length-1] : null);
 }
 
 export const getActiveRunIds = createSelector(
@@ -36,7 +36,8 @@ export const getActiveRunIds = createSelector(
   (sortedRunsByTeam, teams) => {
     return _.map(teams, (team) => {
         const runs = sortedRunsByTeam[team.id];
-        return getActiveRun(runs).id;
+        const active = getActiveRun(runs);
+        return active ? active.id : null;
       });
   }
 );

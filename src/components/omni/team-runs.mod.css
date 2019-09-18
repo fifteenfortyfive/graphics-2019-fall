@@ -4,7 +4,6 @@
 .content {
   display: flex;
   overflow: hidden;
-  width: 100%;
 }
 
 .teamHeader {
@@ -26,5 +25,12 @@
 
 
 .run {
+  flex: 1 1 auto;
   padding: 6px space-4;
+  white-space: nowrap;
+}
+
+.activeRun {
+  flex-grow: 4;
+  flex-basis: 1200px;
 }
