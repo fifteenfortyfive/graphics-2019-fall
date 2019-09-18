@@ -68,9 +68,9 @@
   top: 200px;
   height: 128px;
   width: 16px;
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
-  border-left: 14px solid #d46060;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #d46060;
 }
 
 .blueTeamIndicator {
@@ -78,10 +78,10 @@
   right: 0;
   bottom: 200px;
   height: 128px;
-  width: 32px;
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
-  border-right: 14px solid #56a3d8;
+  width: 16px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid #56a3d8;
 }
 
 
