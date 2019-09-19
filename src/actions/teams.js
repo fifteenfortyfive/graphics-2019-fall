@@ -1,10 +1,15 @@
 import { commonThunk, denulled } from '../actions';
 
+import {EVENT_ID} from '../constants';
+
 export function fetchTeams(eventId) {
   return commonThunk({
     method: 'get',
     path: `/api/v1/events/${eventId}/teams`,
     name: 'teams',
+    query: {
+      event_id: eventId
+    }
   }, (dispatch, response) => {
     dispatch(receiveTeams(response.teams))
   });

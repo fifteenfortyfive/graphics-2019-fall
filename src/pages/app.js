@@ -97,17 +97,19 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   const ready = InitStore.isReady(state);
-  const activeRuns = ready ? ActiveRunStore.getActiveRunIds(state) : {};
-
-  const redTeamId = 1;
-  const blueTeamId = 5;
+  const redTeamId = 28;
+  const blueTeamId = 29;
+  const redActiveRun =
+      ActiveRunStore.getActiveRunForTeam(state, {teamId: redTeamId});
+  const blueActiveRun =
+      ActiveRunStore.getActiveRunForTeam(state, {teamId: blueTeamId});
 
   return {
     eventId: EVENT_ID,
     redTeamId,
     blueTeamId,
-    redActiveRunId: activeRuns[redTeamId],
-    blueActiveRunId: activeRuns[blueTeamId],
+    redActiveRunId: redActiveRun,
+    blueActiveRunId: blueActiveRun,
     ready
   }
 };

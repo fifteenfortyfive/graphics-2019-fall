@@ -41,3 +41,12 @@ export const getActiveRunIds = createSelector(
       });
   }
 );
+
+export const getActiveRunForTeam = createCachedSelector(
+  [getSortedRunsByTeam, getTeamId],
+  (sortedRunsByTeam, teamId) => {
+    const runs = sortedRunsByTeam[teamId];
+    const active = getActiveRun(runs);
+    return active ? active.id : null;
+  }
+)(getTeamId);

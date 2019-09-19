@@ -103,6 +103,7 @@ class Run extends Component {
                   <ProgressBar
                     className={style.progress}
                     progress={progress}
+                    color={team && `#${team.color}`}
                   />
                 }
               </div>

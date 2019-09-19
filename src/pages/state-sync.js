@@ -5,7 +5,7 @@ import * as WebSocketActions from '../actions/websocket';
 import {getCurrentTimeWithAccuracy} from '../selectors/time';
 
 // 2 seconds is essentially real-time. This might be too chatty.
-const SYNC_INTERVAL = 5 * 1000;
+const SYNC_INTERVAL = 2 * 1000;
 
 class StateSync extends Component {
   constructor(props) {

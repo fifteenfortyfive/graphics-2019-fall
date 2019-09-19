@@ -6,7 +6,7 @@ export const API_BASE_URL = queryAPIBase || "http://localhost:3000";
 export const ASSETS_URL = "https://fifteenfortyfive-assets.nyc3.cdn.digitaloceanspaces.com";
 
 
-export const EVENT_ID = 16;
+export const EVENT_ID = 23;
 
 export const Colors = {
   TWITCH: '#6441A4'

@@ -39,7 +39,7 @@ const VerticalTeamList = (props) => {
           showProgressBar={true}
           wrapText={false}
           className={classNames(style.run, {
-            [style.activeRun]: run.id == runs[0].id
+            [style.activeRun]: run.id == activeRunId
           })}
         />)
       }
