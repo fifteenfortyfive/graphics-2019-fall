@@ -11,7 +11,7 @@ import style from './stream.mod.css';
 
 // Set this to use thumbnails instead of interactive twitch players.
 // Reduces load times and helps React Dev Tools not break.
-const USE_STREAM_PLACEHOLDERS = true;
+const USE_STREAM_PLACEHOLDERS = false;
 
 const GLOBAL_PLAYER_OPTIONS = {
   width: "100%",
@@ -26,13 +26,6 @@ class Stream extends Component {
     this.playerContainer = createRef();
     this.playerContainerID = _.uniqueId('stream_player_');
     this.player = null;
-  }
-
-  shouldComponentUpdate(nextProps) {
-    const {twitchName, show} = this.props;
-
-    return twitchName !== nextProps.twitchName
-        || show !== nextProps.show;
   }
 
   componentDidMount() {
@@ -53,6 +46,7 @@ class Stream extends Component {
       twitchName,
       quality,
       volume,
+      muted,
       onStreamReady,
       onStreamUnready
     } = this.props;
@@ -64,14 +58,19 @@ class Stream extends Component {
     } else if(!this.player) {
       this.player = new Twitch.Player(this.playerContainerID, {...GLOBAL_PLAYER_OPTIONS});
       this.player.setVolume(0);
-      this.player.addEventListener(Twitch.Player.PLAYING, onStreamReady);
-      this.player.addEventListener(Twitch.Player.OFFLINE, onStreamUnready);
+      if(onStreamReady) {
+        this.player.addEventListener(Twitch.Player.PLAYING, onStreamReady);
+      }
+      if(onStreamUnready) {
+        this.player.addEventListener(Twitch.Player.OFFLINE, onStreamUnready);
+      }
     }
 
-
+    console.log("Updating player", twitchName, quality, volume)
     this.player.setChannel(twitchName);
     this.player.setQuality(quality);
     this.player.setVolume(volume);
+    this.player.setMuted(muted);
   }
 
   renderStream() {

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 
 import * as ActiveRunStore from '../selectors/active-runs';
+import * as FeaturedRunStore from '../selectors/featured-run';
 import * as InitStore from '../selectors/init';
 import * as InitActions from '../actions/init';
 import * as TimerActions from '../actions/timers';
@@ -40,8 +41,13 @@ class App extends Component {
       blueTeamId,
       redActiveRunId,
       blueActiveRunId,
+      featuredRunId,
       ready
     } = this.props;
+
+    console.log(redActiveRunId, blueActiveRunId, featuredRunId)
+    console.log(featuredRunId == redActiveRunId ? 0.9 : 0)
+    console.log(featuredRunId == blueActiveRunId ? 0.9 : 0)
 
     return (
       <Layout>
@@ -55,11 +61,12 @@ class App extends Component {
                 className={style.redTeam}
               />
               <div class={style.videos}>
-                <RunnerStream
+                <Stream
                   runId={redActiveRunId}
                   isFeatured={false}
                   includeFeaturedIndicator={false}
                   quality={Stream.Qualities.SOURCE}
+                  muted={featuredRunId != redActiveRunId}
                   volume={0.9}
                   className={style.main1}
                 />
@@ -71,11 +78,12 @@ class App extends Component {
                     <EventTimer className={style.timer} eventId={EVENT_ID} />
                   </div>
                 </div>
-                <RunnerStream
+                <Stream
                   runId={blueActiveRunId}
                   isFeatured={false}
                   includeFeaturedIndicator={false}
                   quality={Stream.Qualities.SOURCE}
+                  muted={featuredRunId != blueActiveRunId}
                   volume={0.9}
                   className={style.main2}
                 />
@@ -103,6 +111,7 @@ const mapStateToProps = (state) => {
       ActiveRunStore.getActiveRunForTeam(state, {teamId: redTeamId});
   const blueActiveRun =
       ActiveRunStore.getActiveRunForTeam(state, {teamId: blueTeamId});
+  const featuredRunId = FeaturedRunStore.getFeaturedRunId(state);
 
   return {
     eventId: EVENT_ID,
@@ -110,6 +119,7 @@ const mapStateToProps = (state) => {
     blueTeamId,
     redActiveRunId: redActiveRun,
     blueActiveRunId: blueActiveRun,
+    featuredRunId,
     ready
   }
 };
