@@ -93,7 +93,7 @@ class Run extends Component {
         { ready
           ? <Fragment>
               <div class={style.runnerAvatar}>
-                <Avatar src={runner.avatar_object_id} size={48} />
+                <Avatar src={runner.avatar_hash} size={48} />
               </div>
               <div class={style.runInfo}>
                 <div class={style.runnerName}>{runner.username}</div>
